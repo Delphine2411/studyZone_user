@@ -14,12 +14,13 @@ const UserSchema = new Mongoose.Schema({
   email: {
     type: String,
     unique: true,
+    required: true
     
   },
   profil: {
     type: String,
-    unique: true,
-    required: true,
+    required: true
+    
     
   },
   

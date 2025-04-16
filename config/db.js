@@ -1,10 +1,7 @@
 const Mongoose = require("mongoose")
-const localDB = `mongodb+srv://kpankpand:vOTld8VCnhm6RdM8@cluster0.x2qt1pr.mongodb.net/studyZone`
+require('dotenv').config();
 const connectDB = async () => {
-  await Mongoose.connect(localDB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  await Mongoose.connect(process.env.MONGO_URI);
   console.log("MongoDB Connected")
 }
 module.exports = connectDB

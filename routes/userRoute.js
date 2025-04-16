@@ -1,8 +1,10 @@
 
-const express = require("express")
-const router = express.Router()
-const { register } = require("./auth")
+const express = require("express");
+const router = express.Router();
+require('dotenv').config();
+const { register, login, update, deleteUser } = require("../controllers/userController");
 router.route("/register").post(register)
-module.exports = router
-
-app.use("/api/auth", require("./Auth/route"))
+router.route("/login").post(login);
+router.route("/update").put(update);
+router.route("/deleteUser").delete(deleteUser);
+module.exports = router;
